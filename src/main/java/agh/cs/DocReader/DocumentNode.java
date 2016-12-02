@@ -8,7 +8,7 @@ import java.util.List;
  */
 
 public interface DocumentNode {
-    List<String> getValue();
+    List<String> getLines();
 
     List<DocumentNode> getChildren();
 }

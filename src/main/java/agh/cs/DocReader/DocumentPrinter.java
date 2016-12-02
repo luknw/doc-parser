@@ -6,9 +6,9 @@ package agh.cs.DocReader;
  */
 
 public interface DocumentPrinter {
-    void printChapter(int chapter);
+    void printChapter(DocumentNode root, int chapterIndex);
 
-    void printArticle(int article);
+    void printArticle(DocumentNode root, int articleIndex);
 
-    void printArticles(int first, int last);
+    void printArticles(DocumentNode root, int first, int last);
 }
