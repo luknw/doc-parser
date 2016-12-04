@@ -1,5 +1,6 @@
 package agh.cs.DocReader;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -8,11 +9,11 @@ import java.util.List;
  */
 
 public class Node implements DocumentNode {
-    private List<String> value;
-    private List<DocumentNode> children;
+    private List<String> header = new LinkedList<>();
+    private List<DocumentNode> children = new LinkedList<>();
 
     public List<String> getLines() {
-        return value;
+        return header;
     }
 
     public List<DocumentNode> getChildren() {
@@ -23,6 +24,7 @@ public class Node implements DocumentNode {
     public String toString() {
         final StringBuilder sb = new StringBuilder();
         getLines().forEach(line -> sb.append(line).append(System.lineSeparator()));
+        getChildren().forEach(sb::append);
         return sb.toString();
     }
 }
