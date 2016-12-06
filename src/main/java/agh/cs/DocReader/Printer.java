@@ -46,14 +46,14 @@ public class Printer implements DocumentPrinter {
 
     private void printArticleRange(int first) {
         if (first < 1) {
-            System.err.println(INVALID_ARTICLE_RANGE + "0");
+            System.err.println(INVALID_ARTICLE_RANGE);
             return;
         }
 
         try {
             iterateBeforeArticle(first);
         } catch (IndexOutOfBoundsException e) {
-            System.err.println(INVALID_ARTICLE_RANGE + "1");
+            System.err.println(INVALID_ARTICLE_RANGE);
             return;
         }
         printArticlesLeftInChapter();
@@ -63,7 +63,7 @@ public class Printer implements DocumentPrinter {
             articleIterator = chapterIterator.next().getChildren().listIterator();
             printArticlesLeftInChapter();
         }
-        if (articlesToPrint > 0) System.err.println(INVALID_ARTICLE_RANGE + "2");
+        if (articlesToPrint > 0) System.err.println(INVALID_ARTICLE_RANGE);
     }
 
     public void printChapter(DocumentNode root, int chapterNumber) {
